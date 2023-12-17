@@ -1,0 +1,498 @@
+{
+	"info": {
+		"_postman_id": "38d8d08f-ace0-429e-84e1-fda52c14ba30",
+		"name": "FCB-Tenant-Hub-BE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31329831",
+		"_collection_link": "https://interstellar-station-329448.postman.co/workspace/Tim-sat-set~bae76e94-70c2-4987-bb49-811cfef05183/collection/31329831-38d8d08f-ace0-429e-84e1-fda52c14ba30?action=share&source=collection_link&creator=31329831"
+	},
+	"item": [
+		{
+			"name": "loginkasir",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4000/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logintenant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "tenant",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "tenant123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4000/tenant/logintenant",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"tenant",
+						"logintenant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createkasir",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "adminkedua",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4000/auth/createkasir",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"createkasir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createpesanan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomormeja\" : 6,\r\n    \"listmenu\" : [{\r\n        \"idtenant\" : 4,\r\n        \"namatenant\" : \"Warung Bambang\",\r\n        \"namamenu\" : \"ayam bakar crispy\",\r\n        \"harga\" : 20000,\r\n        \"jumlah\" : 3,\r\n        \"statuspesanan\" : \"sedang dimasak\"\r\n    },{\r\n        \"idtenant\" : \"6563f0ec06e4f227e1ccbb65\",\r\n        \"namatenant\" : \"Warung sulistiawan\",\r\n        \"namamenu\" : \"ikan bambang\",\r\n        \"harga\" : 10000,\r\n        \"jumlah\" : 2, \r\n        \"statuspesanan\" : \"sedang dimasak\"\r\n    }],\r\n    \"hargatotal\" : 80000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/pesanan/pesan",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"pesanan",
+						"pesan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readpesanan",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:4000/pesanan/readpesanan",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"pesanan",
+						"readpesanan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readpesananbyid",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "namatenant",
+							"value": "warung sule gantenk",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Reihan/Downloads/Diagram-PB3-Blueprint.drawio (5).png"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4000/pesanan/readpesananunique/6562b6bb63bb33d46d6905d8",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"pesanan",
+						"readpesananunique",
+						"6562b6bb63bb33d46d6905d8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patchpesanan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"listmenu\": [\r\n                {\r\n                    \"idtenant\": \"4\",\r\n                    \"namatenant\": \"Warung Ez\",\r\n                    \"namamenu\": \"ayam goreng\",\r\n                    \"harga\": 10000,\r\n                    \"jumlah\": 1,\r\n                    \"statuspesanan\": \"sedang diantar\"\r\n                }\r\n],\r\n\"hargatotal\" : 56000}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/pesanan/updatepesanan/6563f38206e4f227e1ccc33b",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"pesanan",
+						"updatepesanan",
+						"6563f38206e4f227e1ccc33b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createtenant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "namatenant",
+							"value": "warung sule gege gemink",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Reihan/Downloads/WhatsApp Image 2023-11-19 at 08.44.39_8d6afdb9.jpg"
+						},
+						{
+							"key": "username",
+							"value": "warung1234",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "pass123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4000/tenant/createtenant",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"tenant",
+						"createtenant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readtenant",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/tenant/readtenant",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"tenant",
+						"readtenant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletetenant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/tenant/deletetenant/6560c0aa015dc1063c99f371",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"tenant",
+						"deletetenant",
+						"6560c0aa015dc1063c99f371"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createmenu",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idtenant",
+							"value": "656077bd565fc17bb669bcf7",
+							"type": "text"
+						},
+						{
+							"key": "namatenant",
+							"value": "warung reyhan gantenk",
+							"type": "text"
+						},
+						{
+							"key": "namamenu",
+							"value": "nasi geprek",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Reihan/Downloads/IMG_1891.PNG"
+						},
+						{
+							"key": "deskripsi",
+							"value": "nasi goreng maknyus",
+							"type": "text"
+						},
+						{
+							"key": "stok",
+							"value": "99",
+							"type": "text"
+						},
+						{
+							"key": "harga",
+							"value": "15000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4000/menu/createmenu",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"menu",
+						"createmenu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readmenu",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:4000/menu/readmenu",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"menu",
+						"readmenu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readmenubyid",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:4000/menu/readmenu/6561eacd0325ad2a0560dc1c",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"menu",
+						"readmenu",
+						"6561eacd0325ad2a0560dc1c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patchmenu",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"stok\" : 4}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/menu/patchmenu/655f1e8cbfdfda5c2459529f",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"menu",
+						"patchmenu",
+						"655f1e8cbfdfda5c2459529f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patchhargatotal",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"hargatotal\" : 10000}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/pesanan/updatehargatotal/6563f38206e4f227e1ccc33b",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"pesanan",
+						"updatehargatotal",
+						"6563f38206e4f227e1ccc33b"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
